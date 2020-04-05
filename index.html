@@ -1,9 +1,8 @@
 <!doctype html>
-<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Vue.js Todo List Tutorial</title>
-    <meta name="author" content="CayoSouza">
+    <meta name="author" content="github.com/CayoSouza">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -20,11 +19,12 @@
 
         <section>
             <ol>
-                <li v-for="(todo, index) in filteredTodos">
+                <li v-for="(todo, index) in filteredTodos" :key="todo.text">
                     <label>
-                        <input type="checkbox" class="form-control"
-                               v-on:change="toggleTodo(todo)"
-                               v-bind:checked="todo.done">
+                        <input type="checkbox"
+                                v-bind:checked="todo.done"
+                                v-on:change="toggleTodo(todo)">
+
                         <del v-if="todo.done">
                             {{ todo.text }}
                         </del>
@@ -33,7 +33,7 @@
                         </span>
                     </label>
 
-                    <img src="close-icon.png" @click="delTodo(index)" alt="fechar">
+                    <img src="close-icon.png" @click="delTodo(todo)" alt="fechar">
                 </li>
             </ol>
         </section>

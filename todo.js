@@ -11,17 +11,25 @@ new Vue({
     methods: {
         toggleTodo(todo) {
             todo.done = !todo.done;
+            this.sortTodos();
         },
         addTodo() {
-            if(!this.currentTodo) return;
+            if(!this.currentTodo || this.checkIfTodoExists()) return;
             this.todos.push({
                 text: this.currentTodo,
                 done: false
             });
             this.currentTodo = "";
+            this.sortTodos();
         },
-        delTodo(index) {
-            this.todos.splice(index, 1);
+        delTodo(todo) {
+            this.todos = this.todos.filter(el => el.text !== todo.text);
+        },
+        sortTodos() {
+            this.todos.sort((a,b) => a.done - b.done);
+        },
+        checkIfTodoExists() {
+            return this.todos.some((todo) => todo.text === this.currentTodo);
         }
     },
     computed: {
