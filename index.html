@@ -23,8 +23,7 @@
                 <li v-for="(todo, index) in filteredTodos" :key="todo.text" v-on:click="toggleTodo(todo)">
                     <label>
                         <input type="checkbox"
-                                v-bind:checked="todo.done"
-                                v-on:change="toggleTodo(todo)">
+                                v-bind:checked="todo.done">
 
                         <del v-if="todo.done">
                             {{ todo.text }}
