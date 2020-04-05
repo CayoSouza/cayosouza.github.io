@@ -6,6 +6,7 @@
     overflow-wrap: break-word;
     hyphens: auto;
     word-break: break-all;
+    -webkit-tap-highlight-color: transparent;
 }
 
 *:focus {
@@ -60,6 +61,7 @@ input[type=text] {
     padding: 0.3em 1em;
     border: 2px solid #4fc08d;
     font-family: Helvetica;
+    max-width: 70%;
 }
 
 ol li {

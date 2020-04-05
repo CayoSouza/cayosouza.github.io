@@ -14,7 +14,7 @@ new Vue({
             this.sortTodos();
         },
         addTodo() {
-            if(!this.currentTodo || this.checkIfTodoExists()) return;
+            if(!this.currentTodo.trim() || this.checkIfTodoExists()) return;
             this.todos.push({
                 text: this.currentTodo,
                 done: false
@@ -29,7 +29,7 @@ new Vue({
             this.todos.sort((a,b) => a.done - b.done);
         },
         checkIfTodoExists() {
-            return this.todos.some((todo) => todo.text === this.currentTodo);
+            return this.todos.some((todo) => todo.text === this.currentTodo.trim());
         }
     },
     computed: {
