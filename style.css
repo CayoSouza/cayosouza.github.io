@@ -36,6 +36,11 @@ h2 {
     font-size: 1.3em;
 }
 
+form {
+    display: flex;
+    justify-content: flex-start;
+}
+
 del {
     color: rgba(0, 0, 0, 0.3);
 }
@@ -54,7 +59,6 @@ input[type=text] {
     border-radius: 2em;
     padding: 0.3em 1em;
     border: 2px solid #4fc08d;
-    width: 65%;
     font-family: Helvetica;
 }
 
@@ -101,7 +105,7 @@ ol {
 @media screen and (min-width: 1000px) {
 
     input[type=text] {
-        width: 40%;
+        width: 35%;
     }
 
     body {
