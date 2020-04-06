@@ -24,7 +24,7 @@
                     <div>
                         <input type="checkbox" v-bind:checked="todo.done">
 
-                        <label @click.prevent>
+                        <label>
                             <del v-if="todo.done">
                                 {{ todo.text }}
                             </del>
