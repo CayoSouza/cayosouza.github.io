@@ -89,11 +89,6 @@ label, img, li {
     cursor: pointer;
 }
 
-label {
-    display: flex;
-    align-items: center;
-}
-
 ol {
     list-style: decimal inside none;
 }
@@ -113,4 +108,9 @@ ol {
     body {
         width: 60%;
     }
+}
+
+li > div {
+    display: flex;
+    align-items: center;
 }
